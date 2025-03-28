@@ -300,7 +300,7 @@ const Home = () => {
                     © {new Date().getFullYear()} IPL Highlights Hub. All rights reserved.
                 </Typography>
                 <Typography variant="body2" sx={{ mt: 1, opacity: 0.8 }}>
-                    Powered by Cloudinary & MongoDB Atlas
+                    Powered by ITPS & Tech Services
                 </Typography>
             </Footer>
 
