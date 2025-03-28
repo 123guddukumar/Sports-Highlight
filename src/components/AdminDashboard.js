@@ -19,7 +19,7 @@ const AdminDashboard = () => {
 
     const fetchVideos = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/videos');
+            const response = await axios.get('https://sports-highlight.onrender.com/api/videos');
             setVideos(response.data);
         } catch (error) {
             console.error('Error fetching videos:', error);
@@ -55,7 +55,7 @@ const AdminDashboard = () => {
             const uploadedUrl = response.data.secure_url;
             setVideoUrl(uploadedUrl);
 
-            await axios.post('http://localhost:5000/api/videos', {
+            await axios.post('https://sports-highlight.onrender.com/api/videos', {
                 title,
                 description,
                 videoUrl: uploadedUrl,
@@ -84,7 +84,7 @@ const AdminDashboard = () => {
             return;
         }
         try {
-            await axios.put(`http://localhost:5000/api/videos/${editVideo._id}`, {
+            await axios.put(`https://sports-highlight.onrender.com/api/videos/${editVideo._id}`, {
                 title: editVideo.title,
                 description: editVideo.description,
             });
@@ -99,7 +99,7 @@ const AdminDashboard = () => {
     const handleDelete = async (id) => {
         if (window.confirm('Are you sure you want to delete this video? This will remove it from Cloudinary and the database permanently.')) {
             try {
-                await axios.delete(`http://localhost:5000/api/videos/${id}`);
+                await axios.delete(`https://sports-highlight.onrender.com/api/videos/${id}`);
                 setMessage('Video deleted successfully from Cloudinary and MongoDB!');
                 fetchVideos();
             } catch (error) {
